@@ -1,0 +1,22 @@
+
+<div class="courses-container">
+  <div 
+  class="input-filter"
+  >
+    <input
+      type="text"
+      placeholder="Search by title or author..."
+      [(ngModel)]="searchTerm" 
+      (input)="searchCourses()" 
+    />
+    <!-- <button (click)="searchCourses()">Rechercher</button>  -->
+  </div>
+  <div class="course-card" *ngFor="let course of filteredCourses ">
+    <h3>{{ course.title }}</h3>
+    <p>Auteur : {{ course.author }}</p>
+    <p>Prix : ${{ course.price }}</p>
+    <button style="margin: 10px;" [routerLink]="['/course', course.id]">View Details</button>
+    <button (click)="addToCart(course)">Ajouter au panier</button>
+  </div>
+    
+  </div>

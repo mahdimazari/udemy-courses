@@ -1,0 +1,16 @@
+
+<div class="details-content">
+<div *ngIf="course; else notFound">
+    <h2>{{ course.title }}</h2>
+    <!-- <img *ngIf="course.imageUrl" [src]="course.imageUrl" alt="{{ course.title }}" /> -->
+    <p><strong>Author:</strong> {{ course.author }}</p>
+    <p><strong>Price:</strong> {{ course.price | currency }}</p>
+    <p><strong>Description:</strong> {{ course.description }}</p>
+    <button routerLink="/">Back to Courses</button>
+  </div>
+  
+  <ng-template #notFound>
+    <p>Course not found.</p>
+  </ng-template>
+
+</div>
